@@ -372,10 +372,13 @@ FROM Host_3NF;
 
 /* Normalização da Calendar */
 /* <Normalização Calendar 1NF> */
+DROP TABLE IF EXISTS Calendar_1NF CASCADE;
 ALTER TABLE Calendar RENAME TO Calendar_1NF;
 /* <Normalização Calendar 2NF> */
+DROP TABLE IF EXISTS Calendar_2NF CASCADE;
 ALTER TABLE Calendar_1NF RENAME TO Calendar_2NF;
 /* <Normalização Calendar 3NF> */
+DROP TABLE IF EXISTS Calendar_3NF CASCADE;
 ALTER TABLE Calendar_2NF RENAME TO Calendar_3NF;
 
 /* <Normalização Calendar BCNF> */
@@ -413,9 +416,11 @@ FROM Calendar_3NF;
 
 /* Normalização da Reviews */
 /* <Normalização Reviews 1NF> */
+DROP TABLE IF EXISTS Reviews_1NF CASCADE;
 ALTER TABLE Reviews RENAME TO Reviews_1NF;
 ALTER TABLE Reviews_1NF RENAME COLUMN id TO id_review;
 /* <Normalização Reviews 2NF> */
+DROP TABLE IF EXISTS Reviews_2NF CASCADE;
 ALTER TABLE Reviews_1NF RENAME TO Reviews_2NF;
 
 /* <Normalização Reviews 3NF> */
